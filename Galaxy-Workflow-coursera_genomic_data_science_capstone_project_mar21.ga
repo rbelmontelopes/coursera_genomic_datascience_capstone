@@ -1,0 +1,2312 @@
+{
+    "a_galaxy_workflow": "true",
+    "annotation": "workflow for RNA-Seq expression analysis",
+    "creator": [
+        {
+            "class": "Person",
+            "identifier": "",
+            "name": "Ricardo Belmonte-Lopes"
+        }
+    ],
+    "format-version": "0.1",
+    "license": "GPL-3.0-or-later",
+    "name": "coursera_genomic_data_science_capstone_project_mar21",
+    "steps": {
+        "0": {
+            "annotation": "Object created by selecting in NCBI to send SRR1554541 to Galaxy",
+            "content_id": null,
+            "errors": null,
+            "id": 0,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "Object created by selecting in NCBI to send SRR1554541 to Galaxy",
+                    "name": "SRA SRR1554541"
+                }
+            ],
+            "label": "SRA SRR1554541",
+            "name": "Input dataset",
+            "outputs": [],
+            "position": {
+                "bottom": -131.31770833333334,
+                "height": 60.75,
+                "left": -597.265625,
+                "right": -447.265625,
+                "top": -192.06770833333334,
+                "width": 150,
+                "x": -597.265625,
+                "y": -192.06770833333334
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false}",
+            "tool_version": null,
+            "type": "data_input",
+            "uuid": "4607d360-c5b0-4889-880e-74531447d53b",
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "output",
+                    "uuid": "eac96454-7067-4015-94e5-1eda922858d5"
+                }
+            ]
+        },
+        "1": {
+            "annotation": "Object created by selecting in NCBI to send SRR1554535 to Galaxy",
+            "content_id": null,
+            "errors": null,
+            "id": 1,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "Object created by selecting in NCBI to send SRR1554535 to Galaxy",
+                    "name": "SRA SRR1554535"
+                }
+            ],
+            "label": "SRA SRR1554535",
+            "name": "Input dataset",
+            "outputs": [],
+            "position": {
+                "bottom": 363.7135416666667,
+                "height": 60.75,
+                "left": -574.859375,
+                "right": -424.859375,
+                "top": 302.9635416666667,
+                "width": 150,
+                "x": -574.859375,
+                "y": 302.9635416666667
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false}",
+            "tool_version": null,
+            "type": "data_input",
+            "uuid": "70978c4f-fd6b-4f08-a25f-fac7f34fabc7",
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "output",
+                    "uuid": "ead911b9-94ca-4d06-8fbf-4482dd17ca2b"
+                }
+            ]
+        },
+        "2": {
+            "annotation": "Object created by selecting in UCSC browser the hg19 genome and using the send to Galaxy option",
+            "content_id": null,
+            "errors": null,
+            "id": 2,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "Object created by selecting in UCSC browser the hg19 genome and using the send to Galaxy option",
+                    "name": "Download of hg19 from UCSC Main on Human: ncbiRefSeq (genome)"
+                }
+            ],
+            "label": "Download of hg19 from UCSC Main on Human: ncbiRefSeq (genome)",
+            "name": "Input dataset",
+            "outputs": [],
+            "position": {
+                "bottom": 401.5885416666667,
+                "height": 90.75,
+                "left": 631.34375,
+                "right": 781.34375,
+                "top": 310.8385416666667,
+                "width": 150,
+                "x": 631.34375,
+                "y": 310.8385416666667
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false}",
+            "tool_version": null,
+            "type": "data_input",
+            "uuid": "bfeb0050-1d21-45fd-b6f3-af1f4f2dd249",
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "output",
+                    "uuid": "8699b7eb-5061-4797-bac1-5b4b1f75fa21"
+                }
+            ]
+        },
+        "3": {
+            "annotation": "Object created by selecting in NCBI to send SRR1554538 to Galaxy",
+            "content_id": null,
+            "errors": null,
+            "id": 3,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "Object created by selecting in NCBI to send SRR1554538 to Galaxy",
+                    "name": "SRA SRR1554538"
+                }
+            ],
+            "label": "SRA SRR1554538",
+            "name": "Input dataset",
+            "outputs": [],
+            "position": {
+                "bottom": -471.63020833333337,
+                "height": 60.75,
+                "left": -587.609375,
+                "right": -437.609375,
+                "top": -532.3802083333334,
+                "width": 150,
+                "x": -587.609375,
+                "y": -532.3802083333334
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false}",
+            "tool_version": null,
+            "type": "data_input",
+            "uuid": "224a1a77-3c2d-479c-bfda-ae965aa37c37",
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "output",
+                    "uuid": "a30e745c-8a58-4d2a-9114-1187a0757a67"
+                }
+            ]
+        },
+        "4": {
+            "annotation": "Object created by selecting in NCBI to send SRR1554534 to Galaxy",
+            "content_id": null,
+            "errors": null,
+            "id": 4,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "Object created by selecting in NCBI to send SRR1554534 to Galaxy",
+                    "name": "SRA SRR1554534"
+                }
+            ],
+            "label": "SRA SRR1554534",
+            "name": "Input dataset",
+            "outputs": [],
+            "position": {
+                "bottom": 625.6354166666666,
+                "height": 60.75,
+                "left": -569.65625,
+                "right": -419.65625,
+                "top": 564.8854166666666,
+                "width": 150,
+                "x": -569.65625,
+                "y": 564.8854166666666
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false}",
+            "tool_version": null,
+            "type": "data_input",
+            "uuid": "2eb9312c-8f7e-460b-884f-5a09490d5658",
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "output",
+                    "uuid": "cbddcec7-4f20-4f10-bcad-ddc44738fe96"
+                }
+            ]
+        },
+        "5": {
+            "annotation": "Object created by selecting in NCBI to send SRR1554539 to Galaxy",
+            "content_id": null,
+            "errors": null,
+            "id": 5,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "Object created by selecting in NCBI to send SRR1554539 to Galaxy",
+                    "name": "SRA SRR1554539"
+                }
+            ],
+            "label": "SRA SRR1554539",
+            "name": "Input dataset",
+            "outputs": [],
+            "position": {
+                "bottom": 855.8854166666666,
+                "height": 60.75,
+                "left": -572,
+                "right": -422,
+                "top": 795.1354166666666,
+                "width": 150,
+                "x": -572,
+                "y": 795.1354166666666
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false}",
+            "tool_version": null,
+            "type": "data_input",
+            "uuid": "f05b2cb5-62e2-49d6-8468-3d466df58a68",
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "output",
+                    "uuid": "b4da1f33-5276-4301-acda-cee8a4557b52"
+                }
+            ]
+        },
+        "6": {
+            "annotation": "Object created by selecting in NCBI to send SRR1554537 to Galaxy",
+            "content_id": null,
+            "errors": null,
+            "id": 6,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "Object created by selecting in NCBI to send SRR1554537 to Galaxy",
+                    "name": "SRA SRR1554537"
+                }
+            ],
+            "label": "SRA SRR1554537",
+            "name": "Input dataset",
+            "outputs": [],
+            "position": {
+                "bottom": -807.9583333333334,
+                "height": 60.75,
+                "left": -575.609375,
+                "right": -425.609375,
+                "top": -868.7083333333334,
+                "width": 150,
+                "x": -575.609375,
+                "y": -868.7083333333334
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false}",
+            "tool_version": null,
+            "type": "data_input",
+            "uuid": "1f638740-2c69-4a7f-bcd5-f37d8d582c7d",
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "output",
+                    "uuid": "9e917e72-626f-4ae8-b4d5-179b55e0a9f1"
+                }
+            ]
+        },
+        "7": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/sra_tools/fasterq_dump/2.10.8+galaxy0",
+            "errors": null,
+            "id": 7,
+            "input_connections": {
+                "input|file_list": {
+                    "id": 0,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool Faster Download and Extract Reads in FASTQ",
+                    "name": "input"
+                }
+            ],
+            "label": "SRR1554541 Faster Download",
+            "name": "Faster Download and Extract Reads in FASTQ",
+            "outputs": [
+                {
+                    "name": "list_paired",
+                    "type": "input"
+                },
+                {
+                    "name": "output_collection",
+                    "type": "input"
+                },
+                {
+                    "name": "output_collection_other",
+                    "type": "input"
+                },
+                {
+                    "name": "log",
+                    "type": "txt"
+                }
+            ],
+            "position": {
+                "bottom": 1.4635416666666572,
+                "height": 196.5,
+                "left": -250.78125,
+                "right": -100.78125,
+                "top": -195.03645833333334,
+                "width": 150,
+                "x": -250.78125,
+                "y": -195.03645833333334
+            },
+            "post_job_actions": {
+                "HideDatasetActionlog": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "log"
+                },
+                "HideDatasetActionoutput_collection": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "output_collection"
+                },
+                "HideDatasetActionoutput_collection_other": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "output_collection_other"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/sra_tools/fasterq_dump/2.10.8+galaxy0",
+            "tool_shed_repository": {
+                "changeset_revision": "653e89d73fc4",
+                "name": "sra_tools",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"__job_resource\": {\"__job_resource__select\": \"no\", \"__current_case__\": 0}, \"adv\": {\"minlen\": null, \"split\": \"--split-3\", \"skip_technical\": \"true\"}, \"input\": {\"input_select\": \"file_list\", \"__current_case__\": 2, \"file_list\": {\"__class__\": \"RuntimeValue\"}}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "2.10.8+galaxy0",
+            "type": "tool",
+            "uuid": "645f4ad2-73cd-46dd-b889-17b446ac1b65",
+            "workflow_outputs": [
+                {
+                    "label": "SRR1554541 paired-end",
+                    "output_name": "list_paired",
+                    "uuid": "f2b1e911-f786-4f8d-81ec-870254ec6944"
+                }
+            ]
+        },
+        "8": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/sra_tools/fasterq_dump/2.10.8+galaxy0",
+            "errors": null,
+            "id": 8,
+            "input_connections": {
+                "input|file_list": {
+                    "id": 1,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool Faster Download and Extract Reads in FASTQ",
+                    "name": "input"
+                }
+            ],
+            "label": "SRR1554535 Faster Download",
+            "name": "Faster Download and Extract Reads in FASTQ",
+            "outputs": [
+                {
+                    "name": "list_paired",
+                    "type": "input"
+                },
+                {
+                    "name": "output_collection",
+                    "type": "input"
+                },
+                {
+                    "name": "output_collection_other",
+                    "type": "input"
+                },
+                {
+                    "name": "log",
+                    "type": "txt"
+                }
+            ],
+            "position": {
+                "bottom": 363.38541666666663,
+                "height": 196.5,
+                "left": -252.734375,
+                "right": -102.734375,
+                "top": 166.88541666666666,
+                "width": 150,
+                "x": -252.734375,
+                "y": 166.88541666666666
+            },
+            "post_job_actions": {
+                "HideDatasetActionlog": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "log"
+                },
+                "HideDatasetActionoutput_collection": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "output_collection"
+                },
+                "HideDatasetActionoutput_collection_other": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "output_collection_other"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/sra_tools/fasterq_dump/2.10.8+galaxy0",
+            "tool_shed_repository": {
+                "changeset_revision": "653e89d73fc4",
+                "name": "sra_tools",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"__job_resource\": {\"__job_resource__select\": \"no\", \"__current_case__\": 0}, \"adv\": {\"minlen\": null, \"split\": \"--split-3\", \"skip_technical\": \"true\"}, \"input\": {\"input_select\": \"file_list\", \"__current_case__\": 2, \"file_list\": {\"__class__\": \"RuntimeValue\"}}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "2.10.8+galaxy0",
+            "type": "tool",
+            "uuid": "b2fd8c11-4ab8-4c6e-9683-fb0f7df77d20",
+            "workflow_outputs": [
+                {
+                    "label": "SRR1554535 paired-end",
+                    "output_name": "list_paired",
+                    "uuid": "073b8297-6462-4006-ba60-d77bd4acef1d"
+                }
+            ]
+        },
+        "9": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/sra_tools/fasterq_dump/2.10.8+galaxy0",
+            "errors": null,
+            "id": 9,
+            "input_connections": {
+                "input|file_list": {
+                    "id": 3,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool Faster Download and Extract Reads in FASTQ",
+                    "name": "input"
+                }
+            ],
+            "label": "SRR1554538 Faster Download",
+            "name": "Faster Download and Extract Reads in FASTQ",
+            "outputs": [
+                {
+                    "name": "list_paired",
+                    "type": "input"
+                },
+                {
+                    "name": "output_collection",
+                    "type": "input"
+                },
+                {
+                    "name": "output_collection_other",
+                    "type": "input"
+                },
+                {
+                    "name": "log",
+                    "type": "txt"
+                }
+            ],
+            "position": {
+                "bottom": -335.89583333333337,
+                "height": 196.5,
+                "left": -246.671875,
+                "right": -96.671875,
+                "top": -532.3958333333334,
+                "width": 150,
+                "x": -246.671875,
+                "y": -532.3958333333334
+            },
+            "post_job_actions": {
+                "HideDatasetActionlog": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "log"
+                },
+                "HideDatasetActionoutput_collection": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "output_collection"
+                },
+                "HideDatasetActionoutput_collection_other": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "output_collection_other"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/sra_tools/fasterq_dump/2.10.8+galaxy0",
+            "tool_shed_repository": {
+                "changeset_revision": "653e89d73fc4",
+                "name": "sra_tools",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"__job_resource\": {\"__job_resource__select\": \"no\", \"__current_case__\": 0}, \"adv\": {\"minlen\": null, \"split\": \"--split-3\", \"skip_technical\": \"true\"}, \"input\": {\"input_select\": \"file_list\", \"__current_case__\": 2, \"file_list\": {\"__class__\": \"RuntimeValue\"}}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "2.10.8+galaxy0",
+            "type": "tool",
+            "uuid": "1e3fb71d-ca69-4dcf-9b38-33189589c965",
+            "workflow_outputs": [
+                {
+                    "label": "SRR1554548 paired-end",
+                    "output_name": "list_paired",
+                    "uuid": "5e8610ff-caa2-4f84-9e59-fb7146d44c0a"
+                }
+            ]
+        },
+        "10": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/sra_tools/fasterq_dump/2.10.8+galaxy0",
+            "errors": null,
+            "id": 10,
+            "input_connections": {
+                "input|file_list": {
+                    "id": 4,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool Faster Download and Extract Reads in FASTQ",
+                    "name": "input"
+                }
+            ],
+            "label": "SRR1554534 Faster Download",
+            "name": "Faster Download and Extract Reads in FASTQ",
+            "outputs": [
+                {
+                    "name": "list_paired",
+                    "type": "input"
+                },
+                {
+                    "name": "output_collection",
+                    "type": "input"
+                },
+                {
+                    "name": "output_collection_other",
+                    "type": "input"
+                },
+                {
+                    "name": "log",
+                    "type": "txt"
+                }
+            ],
+            "position": {
+                "bottom": 668.3854166666667,
+                "height": 196.5,
+                "left": -258.59375,
+                "right": -108.59375,
+                "top": 471.8854166666667,
+                "width": 150,
+                "x": -258.59375,
+                "y": 471.8854166666667
+            },
+            "post_job_actions": {
+                "HideDatasetActionlog": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "log"
+                },
+                "HideDatasetActionoutput_collection": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "output_collection"
+                },
+                "HideDatasetActionoutput_collection_other": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "output_collection_other"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/sra_tools/fasterq_dump/2.10.8+galaxy0",
+            "tool_shed_repository": {
+                "changeset_revision": "653e89d73fc4",
+                "name": "sra_tools",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"__job_resource\": {\"__job_resource__select\": \"no\", \"__current_case__\": 0}, \"adv\": {\"minlen\": null, \"split\": \"--split-3\", \"skip_technical\": \"true\"}, \"input\": {\"input_select\": \"file_list\", \"__current_case__\": 2, \"file_list\": {\"__class__\": \"RuntimeValue\"}}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "2.10.8+galaxy0",
+            "type": "tool",
+            "uuid": "721c90e3-eb03-4c51-a3dd-1032414f1b4b",
+            "workflow_outputs": [
+                {
+                    "label": "SRR1554534 paired-end",
+                    "output_name": "list_paired",
+                    "uuid": "35e6c1ae-cf0c-4e34-90d6-6fd1d77675e2"
+                }
+            ]
+        },
+        "11": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/sra_tools/fasterq_dump/2.10.8+galaxy0",
+            "errors": null,
+            "id": 11,
+            "input_connections": {
+                "input|file_list": {
+                    "id": 5,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool Faster Download and Extract Reads in FASTQ",
+                    "name": "input"
+                }
+            ],
+            "label": "SRR1554539 Faster Download",
+            "name": "Faster Download and Extract Reads in FASTQ",
+            "outputs": [
+                {
+                    "name": "list_paired",
+                    "type": "input"
+                },
+                {
+                    "name": "output_collection",
+                    "type": "input"
+                },
+                {
+                    "name": "output_collection_other",
+                    "type": "input"
+                },
+                {
+                    "name": "log",
+                    "type": "txt"
+                }
+            ],
+            "position": {
+                "bottom": 967.7760416666666,
+                "height": 196.5,
+                "left": -259.828125,
+                "right": -109.828125,
+                "top": 771.2760416666666,
+                "width": 150,
+                "x": -259.828125,
+                "y": 771.2760416666666
+            },
+            "post_job_actions": {
+                "HideDatasetActionlog": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "log"
+                },
+                "HideDatasetActionoutput_collection": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "output_collection"
+                },
+                "HideDatasetActionoutput_collection_other": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "output_collection_other"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/sra_tools/fasterq_dump/2.10.8+galaxy0",
+            "tool_shed_repository": {
+                "changeset_revision": "653e89d73fc4",
+                "name": "sra_tools",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"__job_resource\": {\"__job_resource__select\": \"no\", \"__current_case__\": 0}, \"adv\": {\"minlen\": null, \"split\": \"--split-3\", \"skip_technical\": \"true\"}, \"input\": {\"input_select\": \"file_list\", \"__current_case__\": 2, \"file_list\": {\"__class__\": \"RuntimeValue\"}}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "2.10.8+galaxy0",
+            "type": "tool",
+            "uuid": "f82fb762-2d47-4a3e-bd80-099bf49a6b69",
+            "workflow_outputs": [
+                {
+                    "label": "SRR1554539 paired-end",
+                    "output_name": "list_paired",
+                    "uuid": "98f8427b-2f3a-40f8-934a-98b20123e790"
+                }
+            ]
+        },
+        "12": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/sra_tools/fasterq_dump/2.10.8+galaxy0",
+            "errors": null,
+            "id": 12,
+            "input_connections": {
+                "input|file_list": {
+                    "id": 6,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool Faster Download and Extract Reads in FASTQ",
+                    "name": "input"
+                }
+            ],
+            "label": "SRR1554537 Faster Download",
+            "name": "Faster Download and Extract Reads in FASTQ",
+            "outputs": [
+                {
+                    "name": "list_paired",
+                    "type": "input"
+                },
+                {
+                    "name": "output_collection",
+                    "type": "input"
+                },
+                {
+                    "name": "output_collection_other",
+                    "type": "input"
+                },
+                {
+                    "name": "log",
+                    "type": "txt"
+                }
+            ],
+            "position": {
+                "bottom": -686.8802083333334,
+                "height": 196.5,
+                "left": -246.671875,
+                "right": -96.671875,
+                "top": -883.3802083333334,
+                "width": 150,
+                "x": -246.671875,
+                "y": -883.3802083333334
+            },
+            "post_job_actions": {
+                "HideDatasetActionlog": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "log"
+                },
+                "HideDatasetActionoutput_collection": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "output_collection"
+                },
+                "HideDatasetActionoutput_collection_other": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "output_collection_other"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/sra_tools/fasterq_dump/2.10.8+galaxy0",
+            "tool_shed_repository": {
+                "changeset_revision": "653e89d73fc4",
+                "name": "sra_tools",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"__job_resource\": {\"__job_resource__select\": \"no\", \"__current_case__\": 0}, \"adv\": {\"minlen\": null, \"split\": \"--split-3\", \"skip_technical\": \"true\"}, \"input\": {\"input_select\": \"file_list\", \"__current_case__\": 2, \"file_list\": {\"__class__\": \"RuntimeValue\"}}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "2.10.8+galaxy0",
+            "type": "tool",
+            "uuid": "5d21ee99-ce34-4cc3-8ed7-71ff90919923",
+            "workflow_outputs": [
+                {
+                    "label": "SRR1554537 paired-end",
+                    "output_name": "list_paired",
+                    "uuid": "73910ac3-974a-4b67-b3bd-6cbf32303ffe"
+                }
+            ]
+        },
+        "13": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/hisat2/hisat2/2.1.0+galaxy5",
+            "errors": null,
+            "id": 13,
+            "input_connections": {
+                "library|input_1": {
+                    "id": 7,
+                    "output_name": "list_paired"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool HISAT2",
+                    "name": "library"
+                }
+            ],
+            "label": "SRR1554541 alignment to hg19 with HISAT2",
+            "name": "HISAT2",
+            "outputs": [
+                {
+                    "name": "output_alignments",
+                    "type": "bam"
+                },
+                {
+                    "name": "summary_file",
+                    "type": "txt"
+                }
+            ],
+            "position": {
+                "bottom": 3.916666666666657,
+                "height": 189,
+                "left": 25.359375,
+                "right": 175.359375,
+                "top": -185.08333333333334,
+                "width": 150,
+                "x": 25.359375,
+                "y": -185.08333333333334
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/hisat2/hisat2/2.1.0+galaxy5",
+            "tool_shed_repository": {
+                "changeset_revision": "0c16cad5e03b",
+                "name": "hisat2",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"__job_resource\": {\"__job_resource__select\": \"no\", \"__current_case__\": 0}, \"adv\": {\"input_options\": {\"input_options_selector\": \"defaults\", \"__current_case__\": 0}, \"alignment_options\": {\"alignment_options_selector\": \"defaults\", \"__current_case__\": 0}, \"scoring_options\": {\"scoring_options_selector\": \"defaults\", \"__current_case__\": 0}, \"spliced_options\": {\"spliced_options_selector\": \"advanced\", \"__current_case__\": 1, \"canonical_penalty\": \"0\", \"noncanonical_penalty\": \"12\", \"function_type\": \"G\", \"constant_term\": \"-8.0\", \"coefficient\": \"1.0\", \"nc_function_type\": \"G\", \"nc_constant_term\": \"-8.0\", \"nc_coefficient\": \"1.0\", \"min_intron\": \"20\", \"max_intron\": \"500000\", \"no_spliced_alignment_options\": {\"no_spliced_alignment\": \"\", \"__current_case__\": 1}, \"known_splice_gtf\": {\"__class__\": \"RuntimeValue\"}, \"tma\": \"--dta\", \"notmplen\": \"false\", \"novel_splicesite_outfile\": \"false\"}, \"reporting_options\": {\"reporting_options_selector\": \"defaults\", \"__current_case__\": 0}, \"output_options\": {\"output_options_selector\": \"defaults\", \"__current_case__\": 0}, \"other_options\": {\"other_options_selector\": \"defaults\", \"__current_case__\": 0}}, \"library\": {\"type\": \"paired_collection\", \"__current_case__\": 2, \"input_1\": {\"__class__\": \"RuntimeValue\"}, \"rna_strandness\": \"\", \"paired_options\": {\"paired_options_selector\": \"defaults\", \"__current_case__\": 0}}, \"reference_genome\": {\"source\": \"indexed\", \"__current_case__\": 0, \"index\": \"hg19\"}, \"sum\": {\"new_summary\": \"true\", \"summary_file\": \"true\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "2.1.0+galaxy5",
+            "type": "tool",
+            "uuid": "9264c72b-4b12-4482-ba6a-cfd109e4ba5d",
+            "workflow_outputs": [
+                {
+                    "label": "SRR1554541 aligned",
+                    "output_name": "output_alignments",
+                    "uuid": "05708555-b20b-4644-b02c-a93c2926bfcf"
+                },
+                {
+                    "label": "summarySRR1554541 aligned",
+                    "output_name": "summary_file",
+                    "uuid": "4228b9a2-d716-4808-9bb8-69f680c82aec"
+                }
+            ]
+        },
+        "14": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/hisat2/hisat2/2.1.0+galaxy5",
+            "errors": null,
+            "id": 14,
+            "input_connections": {
+                "library|input_1": {
+                    "id": 8,
+                    "output_name": "list_paired"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool HISAT2",
+                    "name": "library"
+                }
+            ],
+            "label": "SRR1554535 alignment to hg19 with HISAT2",
+            "name": "HISAT2",
+            "outputs": [
+                {
+                    "name": "output_alignments",
+                    "type": "bam"
+                },
+                {
+                    "name": "summary_file",
+                    "type": "txt"
+                }
+            ],
+            "position": {
+                "bottom": 367.82291666666663,
+                "height": 189,
+                "left": 13.265625,
+                "right": 163.265625,
+                "top": 178.82291666666666,
+                "width": 150,
+                "x": 13.265625,
+                "y": 178.82291666666666
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/hisat2/hisat2/2.1.0+galaxy5",
+            "tool_shed_repository": {
+                "changeset_revision": "0c16cad5e03b",
+                "name": "hisat2",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"__job_resource\": {\"__job_resource__select\": \"no\", \"__current_case__\": 0}, \"adv\": {\"input_options\": {\"input_options_selector\": \"defaults\", \"__current_case__\": 0}, \"alignment_options\": {\"alignment_options_selector\": \"defaults\", \"__current_case__\": 0}, \"scoring_options\": {\"scoring_options_selector\": \"defaults\", \"__current_case__\": 0}, \"spliced_options\": {\"spliced_options_selector\": \"advanced\", \"__current_case__\": 1, \"canonical_penalty\": \"0\", \"noncanonical_penalty\": \"12\", \"function_type\": \"G\", \"constant_term\": \"-8.0\", \"coefficient\": \"1.0\", \"nc_function_type\": \"G\", \"nc_constant_term\": \"-8.0\", \"nc_coefficient\": \"1.0\", \"min_intron\": \"20\", \"max_intron\": \"500000\", \"no_spliced_alignment_options\": {\"no_spliced_alignment\": \"\", \"__current_case__\": 1}, \"known_splice_gtf\": {\"__class__\": \"RuntimeValue\"}, \"tma\": \"--dta\", \"notmplen\": \"false\", \"novel_splicesite_outfile\": \"false\"}, \"reporting_options\": {\"reporting_options_selector\": \"defaults\", \"__current_case__\": 0}, \"output_options\": {\"output_options_selector\": \"defaults\", \"__current_case__\": 0}, \"other_options\": {\"other_options_selector\": \"defaults\", \"__current_case__\": 0}}, \"library\": {\"type\": \"paired_collection\", \"__current_case__\": 2, \"input_1\": {\"__class__\": \"RuntimeValue\"}, \"rna_strandness\": \"\", \"paired_options\": {\"paired_options_selector\": \"defaults\", \"__current_case__\": 0}}, \"reference_genome\": {\"source\": \"indexed\", \"__current_case__\": 0, \"index\": \"hg19\"}, \"sum\": {\"new_summary\": \"true\", \"summary_file\": \"true\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "2.1.0+galaxy5",
+            "type": "tool",
+            "uuid": "9fa8096d-45fd-459b-bc08-59b94721712f",
+            "workflow_outputs": [
+                {
+                    "label": "SRR1554535 aligned",
+                    "output_name": "output_alignments",
+                    "uuid": "5c354705-0d2e-4b19-ae8c-a485fe42cb14"
+                },
+                {
+                    "label": "summarySRR1554535 aligned",
+                    "output_name": "summary_file",
+                    "uuid": "1c5dcb16-8061-4319-a084-fdc2cd120931"
+                }
+            ]
+        },
+        "15": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/hisat2/hisat2/2.1.0+galaxy5",
+            "errors": null,
+            "id": 15,
+            "input_connections": {
+                "library|input_1": {
+                    "id": 9,
+                    "output_name": "list_paired"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool HISAT2",
+                    "name": "library"
+                }
+            ],
+            "label": "SRR1554538 alignment to hg19 with HISAT2",
+            "name": "HISAT2",
+            "outputs": [
+                {
+                    "name": "output_alignments",
+                    "type": "bam"
+                },
+                {
+                    "name": "summary_file",
+                    "type": "txt"
+                }
+            ],
+            "position": {
+                "bottom": -293.3958333333333,
+                "height": 189,
+                "left": 31.359375,
+                "right": 181.359375,
+                "top": -482.3958333333333,
+                "width": 150,
+                "x": 31.359375,
+                "y": -482.3958333333333
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/hisat2/hisat2/2.1.0+galaxy5",
+            "tool_shed_repository": {
+                "changeset_revision": "0c16cad5e03b",
+                "name": "hisat2",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"__job_resource\": {\"__job_resource__select\": \"no\", \"__current_case__\": 0}, \"adv\": {\"input_options\": {\"input_options_selector\": \"defaults\", \"__current_case__\": 0}, \"alignment_options\": {\"alignment_options_selector\": \"defaults\", \"__current_case__\": 0}, \"scoring_options\": {\"scoring_options_selector\": \"defaults\", \"__current_case__\": 0}, \"spliced_options\": {\"spliced_options_selector\": \"advanced\", \"__current_case__\": 1, \"canonical_penalty\": \"0\", \"noncanonical_penalty\": \"12\", \"function_type\": \"G\", \"constant_term\": \"-8.0\", \"coefficient\": \"1.0\", \"nc_function_type\": \"G\", \"nc_constant_term\": \"-8.0\", \"nc_coefficient\": \"1.0\", \"min_intron\": \"20\", \"max_intron\": \"500000\", \"no_spliced_alignment_options\": {\"no_spliced_alignment\": \"\", \"__current_case__\": 1}, \"known_splice_gtf\": {\"__class__\": \"RuntimeValue\"}, \"tma\": \"--dta\", \"notmplen\": \"false\", \"novel_splicesite_outfile\": \"false\"}, \"reporting_options\": {\"reporting_options_selector\": \"defaults\", \"__current_case__\": 0}, \"output_options\": {\"output_options_selector\": \"defaults\", \"__current_case__\": 0}, \"other_options\": {\"other_options_selector\": \"defaults\", \"__current_case__\": 0}}, \"library\": {\"type\": \"paired_collection\", \"__current_case__\": 2, \"input_1\": {\"__class__\": \"RuntimeValue\"}, \"rna_strandness\": \"\", \"paired_options\": {\"paired_options_selector\": \"defaults\", \"__current_case__\": 0}}, \"reference_genome\": {\"source\": \"indexed\", \"__current_case__\": 0, \"index\": \"hg19\"}, \"sum\": {\"new_summary\": \"true\", \"summary_file\": \"true\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "2.1.0+galaxy5",
+            "type": "tool",
+            "uuid": "7b20a49e-5773-4348-bef1-8789fe1ae8a6",
+            "workflow_outputs": [
+                {
+                    "label": "SRR1554538 aligned",
+                    "output_name": "output_alignments",
+                    "uuid": "3fed8bd4-68c9-431d-81d1-3efb8fe329be"
+                },
+                {
+                    "label": "summarySRR1554538 aligned",
+                    "output_name": "summary_file",
+                    "uuid": "80b88b6f-8b0a-404e-8468-85f3bbe63e9c"
+                }
+            ]
+        },
+        "16": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/hisat2/hisat2/2.1.0+galaxy5",
+            "errors": null,
+            "id": 16,
+            "input_connections": {
+                "library|input_1": {
+                    "id": 10,
+                    "output_name": "list_paired"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool HISAT2",
+                    "name": "library"
+                }
+            ],
+            "label": "SRR1554534 alignment to hg19 with HISAT2",
+            "name": "HISAT2",
+            "outputs": [
+                {
+                    "name": "output_alignments",
+                    "type": "bam"
+                },
+                {
+                    "name": "summary_file",
+                    "type": "txt"
+                }
+            ],
+            "position": {
+                "bottom": 680.9635416666667,
+                "height": 189,
+                "left": -2,
+                "right": 148,
+                "top": 491.9635416666667,
+                "width": 150,
+                "x": -2,
+                "y": 491.9635416666667
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/hisat2/hisat2/2.1.0+galaxy5",
+            "tool_shed_repository": {
+                "changeset_revision": "0c16cad5e03b",
+                "name": "hisat2",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"__job_resource\": {\"__job_resource__select\": \"no\", \"__current_case__\": 0}, \"adv\": {\"input_options\": {\"input_options_selector\": \"defaults\", \"__current_case__\": 0}, \"alignment_options\": {\"alignment_options_selector\": \"defaults\", \"__current_case__\": 0}, \"scoring_options\": {\"scoring_options_selector\": \"defaults\", \"__current_case__\": 0}, \"spliced_options\": {\"spliced_options_selector\": \"advanced\", \"__current_case__\": 1, \"canonical_penalty\": \"0\", \"noncanonical_penalty\": \"12\", \"function_type\": \"G\", \"constant_term\": \"-8.0\", \"coefficient\": \"1.0\", \"nc_function_type\": \"G\", \"nc_constant_term\": \"-8.0\", \"nc_coefficient\": \"1.0\", \"min_intron\": \"20\", \"max_intron\": \"500000\", \"no_spliced_alignment_options\": {\"no_spliced_alignment\": \"\", \"__current_case__\": 1}, \"known_splice_gtf\": {\"__class__\": \"RuntimeValue\"}, \"tma\": \"--dta\", \"notmplen\": \"false\", \"novel_splicesite_outfile\": \"false\"}, \"reporting_options\": {\"reporting_options_selector\": \"defaults\", \"__current_case__\": 0}, \"output_options\": {\"output_options_selector\": \"defaults\", \"__current_case__\": 0}, \"other_options\": {\"other_options_selector\": \"defaults\", \"__current_case__\": 0}}, \"library\": {\"type\": \"paired_collection\", \"__current_case__\": 2, \"input_1\": {\"__class__\": \"RuntimeValue\"}, \"rna_strandness\": \"\", \"paired_options\": {\"paired_options_selector\": \"defaults\", \"__current_case__\": 0}}, \"reference_genome\": {\"source\": \"indexed\", \"__current_case__\": 0, \"index\": \"hg19\"}, \"sum\": {\"new_summary\": \"true\", \"summary_file\": \"true\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "2.1.0+galaxy5",
+            "type": "tool",
+            "uuid": "500e7fb7-e00c-4b60-86ef-e77c58c97531",
+            "workflow_outputs": [
+                {
+                    "label": "summarySRR1554534 aligned",
+                    "output_name": "summary_file",
+                    "uuid": "f63723e6-3608-41ff-8a02-1343321d67bd"
+                },
+                {
+                    "label": "SRR1554534 aligned",
+                    "output_name": "output_alignments",
+                    "uuid": "afd0ed29-4077-4a76-9536-ea75684573a1"
+                }
+            ]
+        },
+        "17": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/hisat2/hisat2/2.1.0+galaxy5",
+            "errors": null,
+            "id": 17,
+            "input_connections": {
+                "library|input_1": {
+                    "id": 11,
+                    "output_name": "list_paired"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool HISAT2",
+                    "name": "library"
+                }
+            ],
+            "label": "SRR1554539 alignment to hg19 with HISAT2",
+            "name": "HISAT2",
+            "outputs": [
+                {
+                    "name": "output_alignments",
+                    "type": "bam"
+                },
+                {
+                    "name": "summary_file",
+                    "type": "txt"
+                }
+            ],
+            "position": {
+                "bottom": 1039.1510416666665,
+                "height": 189,
+                "left": -14.484375,
+                "right": 135.515625,
+                "top": 850.1510416666666,
+                "width": 150,
+                "x": -14.484375,
+                "y": 850.1510416666666
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/hisat2/hisat2/2.1.0+galaxy5",
+            "tool_shed_repository": {
+                "changeset_revision": "0c16cad5e03b",
+                "name": "hisat2",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"__job_resource\": {\"__job_resource__select\": \"no\", \"__current_case__\": 0}, \"adv\": {\"input_options\": {\"input_options_selector\": \"defaults\", \"__current_case__\": 0}, \"alignment_options\": {\"alignment_options_selector\": \"defaults\", \"__current_case__\": 0}, \"scoring_options\": {\"scoring_options_selector\": \"defaults\", \"__current_case__\": 0}, \"spliced_options\": {\"spliced_options_selector\": \"advanced\", \"__current_case__\": 1, \"canonical_penalty\": \"0\", \"noncanonical_penalty\": \"12\", \"function_type\": \"G\", \"constant_term\": \"-8.0\", \"coefficient\": \"1.0\", \"nc_function_type\": \"G\", \"nc_constant_term\": \"-8.0\", \"nc_coefficient\": \"1.0\", \"min_intron\": \"20\", \"max_intron\": \"500000\", \"no_spliced_alignment_options\": {\"no_spliced_alignment\": \"\", \"__current_case__\": 1}, \"known_splice_gtf\": {\"__class__\": \"RuntimeValue\"}, \"tma\": \"--dta\", \"notmplen\": \"false\", \"novel_splicesite_outfile\": \"false\"}, \"reporting_options\": {\"reporting_options_selector\": \"defaults\", \"__current_case__\": 0}, \"output_options\": {\"output_options_selector\": \"defaults\", \"__current_case__\": 0}, \"other_options\": {\"other_options_selector\": \"defaults\", \"__current_case__\": 0}}, \"library\": {\"type\": \"paired_collection\", \"__current_case__\": 2, \"input_1\": {\"__class__\": \"RuntimeValue\"}, \"rna_strandness\": \"\", \"paired_options\": {\"paired_options_selector\": \"defaults\", \"__current_case__\": 0}}, \"reference_genome\": {\"source\": \"indexed\", \"__current_case__\": 0, \"index\": \"hg19\"}, \"sum\": {\"new_summary\": \"true\", \"summary_file\": \"true\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "2.1.0+galaxy5",
+            "type": "tool",
+            "uuid": "4c8073ec-6d64-4e72-9cd3-25ce4d1d758f",
+            "workflow_outputs": [
+                {
+                    "label": "SRR1554539 aligned",
+                    "output_name": "output_alignments",
+                    "uuid": "cdcf395e-57b5-40f9-a8c4-e09959b58deb"
+                },
+                {
+                    "label": "summary SRR1554539 aligned",
+                    "output_name": "summary_file",
+                    "uuid": "944ed2e0-6ca9-4cd2-94cd-e87d7ccf9e7e"
+                }
+            ]
+        },
+        "18": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/hisat2/hisat2/2.1.0+galaxy5",
+            "errors": null,
+            "id": 18,
+            "input_connections": {
+                "library|input_1": {
+                    "id": 12,
+                    "output_name": "list_paired"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool HISAT2",
+                    "name": "library"
+                }
+            ],
+            "label": "SRR1554537 alignment to hg19 with HISAT2",
+            "name": "HISAT2",
+            "outputs": [
+                {
+                    "name": "output_alignments",
+                    "type": "bam"
+                },
+                {
+                    "name": "summary_file",
+                    "type": "txt"
+                }
+            ],
+            "position": {
+                "bottom": -644.3802083333334,
+                "height": 189,
+                "left": 31.359375,
+                "right": 181.359375,
+                "top": -833.3802083333334,
+                "width": 150,
+                "x": 31.359375,
+                "y": -833.3802083333334
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/hisat2/hisat2/2.1.0+galaxy5",
+            "tool_shed_repository": {
+                "changeset_revision": "0c16cad5e03b",
+                "name": "hisat2",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"__job_resource\": {\"__job_resource__select\": \"no\", \"__current_case__\": 0}, \"adv\": {\"input_options\": {\"input_options_selector\": \"defaults\", \"__current_case__\": 0}, \"alignment_options\": {\"alignment_options_selector\": \"defaults\", \"__current_case__\": 0}, \"scoring_options\": {\"scoring_options_selector\": \"defaults\", \"__current_case__\": 0}, \"spliced_options\": {\"spliced_options_selector\": \"advanced\", \"__current_case__\": 1, \"canonical_penalty\": \"0\", \"noncanonical_penalty\": \"12\", \"function_type\": \"G\", \"constant_term\": \"-8.0\", \"coefficient\": \"1.0\", \"nc_function_type\": \"G\", \"nc_constant_term\": \"-8.0\", \"nc_coefficient\": \"1.0\", \"min_intron\": \"20\", \"max_intron\": \"500000\", \"no_spliced_alignment_options\": {\"no_spliced_alignment\": \"\", \"__current_case__\": 1}, \"known_splice_gtf\": {\"__class__\": \"RuntimeValue\"}, \"tma\": \"--dta\", \"notmplen\": \"false\", \"novel_splicesite_outfile\": \"false\"}, \"reporting_options\": {\"reporting_options_selector\": \"defaults\", \"__current_case__\": 0}, \"output_options\": {\"output_options_selector\": \"defaults\", \"__current_case__\": 0}, \"other_options\": {\"other_options_selector\": \"defaults\", \"__current_case__\": 0}}, \"library\": {\"type\": \"paired_collection\", \"__current_case__\": 2, \"input_1\": {\"__class__\": \"RuntimeValue\"}, \"rna_strandness\": \"\", \"paired_options\": {\"paired_options_selector\": \"defaults\", \"__current_case__\": 0}}, \"reference_genome\": {\"source\": \"indexed\", \"__current_case__\": 0, \"index\": \"hg19\"}, \"sum\": {\"new_summary\": \"true\", \"summary_file\": \"true\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "2.1.0+galaxy5",
+            "type": "tool",
+            "uuid": "e98f79a7-8f6c-4a46-adc9-58dcc6db9acd",
+            "workflow_outputs": [
+                {
+                    "label": "SRR1554537 aligned",
+                    "output_name": "output_alignments",
+                    "uuid": "0f4bd7c6-ab33-42bf-b500-c6134e355a74"
+                },
+                {
+                    "label": "summary SRR1554537 aligned",
+                    "output_name": "summary_file",
+                    "uuid": "3a9d12a3-49f9-42db-9865-dc216a5fc35b"
+                }
+            ]
+        },
+        "19": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/devteam/fastqc/fastqc/0.72+galaxy1",
+            "errors": null,
+            "id": 19,
+            "input_connections": {
+                "input_file": {
+                    "id": 13,
+                    "output_name": "output_alignments"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool FastQC",
+                    "name": "adapters"
+                },
+                {
+                    "description": "runtime parameter for tool FastQC",
+                    "name": "contaminants"
+                },
+                {
+                    "description": "runtime parameter for tool FastQC",
+                    "name": "input_file"
+                },
+                {
+                    "description": "runtime parameter for tool FastQC",
+                    "name": "limits"
+                }
+            ],
+            "label": "quality control of HISAT2 alignment of SRR1554541 with FastQC",
+            "name": "FastQC",
+            "outputs": [
+                {
+                    "name": "html_file",
+                    "type": "html"
+                },
+                {
+                    "name": "text_file",
+                    "type": "txt"
+                }
+            ],
+            "position": {
+                "bottom": -7.473958333333314,
+                "height": 249,
+                "left": 322.875,
+                "right": 472.875,
+                "top": -256.4739583333333,
+                "width": 150,
+                "x": 322.875,
+                "y": -256.4739583333333
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/devteam/fastqc/fastqc/0.72+galaxy1",
+            "tool_shed_repository": {
+                "changeset_revision": "e7b2202befea",
+                "name": "fastqc",
+                "owner": "devteam",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"adapters\": {\"__class__\": \"RuntimeValue\"}, \"contaminants\": {\"__class__\": \"RuntimeValue\"}, \"input_file\": {\"__class__\": \"RuntimeValue\"}, \"kmers\": \"7\", \"limits\": {\"__class__\": \"RuntimeValue\"}, \"min_length\": null, \"nogroup\": \"false\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "0.72+galaxy1",
+            "type": "tool",
+            "uuid": "e2175b41-1b0f-48e4-a1fe-b89f2cf34661",
+            "workflow_outputs": [
+                {
+                    "label": "FastQC on SRR1554541: webpage",
+                    "output_name": "html_file",
+                    "uuid": "26dcbc5e-a145-4f84-8496-f6bc3998ba84"
+                },
+                {
+                    "label": "FastQC on SRR1554541 - raw",
+                    "output_name": "text_file",
+                    "uuid": "8980f67e-2e11-4a0b-9f26-13613bde4b3c"
+                }
+            ]
+        },
+        "20": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/featurecounts/featurecounts/2.0.1",
+            "errors": null,
+            "id": 20,
+            "input_connections": {
+                "alignment": {
+                    "id": 13,
+                    "output_name": "output_alignments"
+                },
+                "anno|reference_gene_sets": {
+                    "id": 2,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool featureCounts",
+                    "name": "alignment"
+                },
+                {
+                    "description": "runtime parameter for tool featureCounts",
+                    "name": "anno"
+                }
+            ],
+            "label": "measure of gene expression of SRR1554541 with featureCounts",
+            "name": "featureCounts",
+            "outputs": [
+                {
+                    "name": "output_short",
+                    "type": "tabular"
+                },
+                {
+                    "name": "output_summary",
+                    "type": "tabular"
+                }
+            ],
+            "position": {
+                "bottom": -13.427083333333343,
+                "height": 189,
+                "left": 969.3125,
+                "right": 1119.3125,
+                "top": -202.42708333333334,
+                "width": 150,
+                "x": 969.3125,
+                "y": -202.42708333333334
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/featurecounts/featurecounts/2.0.1",
+            "tool_shed_repository": {
+                "changeset_revision": "ea04b737afa0",
+                "name": "featurecounts",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"__job_resource\": {\"__job_resource__select\": \"no\", \"__current_case__\": 0}, \"alignment\": {\"__class__\": \"RuntimeValue\"}, \"anno\": {\"anno_select\": \"history\", \"__current_case__\": 2, \"reference_gene_sets\": {\"__class__\": \"RuntimeValue\"}}, \"extended_parameters\": {\"gff_feature_type\": \"exon\", \"gff_feature_attribute\": \"gene_id\", \"summarization_level\": \"false\", \"multifeatures\": {\"multifeat\": \"\", \"__current_case__\": 0}, \"mapping_quality\": \"0\", \"exon_exon_junction_read_counting_enabled\": {\"count_exon_exon_junction_reads\": \"false\", \"__current_case__\": 1}, \"long_reads\": \"false\", \"by_read_group\": \"false\", \"largest_overlap\": \"false\", \"min_overlap\": \"1\", \"frac_overlap\": \"0\", \"frac_overlap_feature\": \"0\", \"read_extension_5p\": \"0\", \"read_extension_3p\": \"0\", \"read_reduction\": \"\", \"primary\": \"false\", \"ignore_dup\": \"false\", \"R\": \"false\", \"count_split_alignments_only\": \"false\"}, \"format\": \"tabdel_short\", \"include_feature_length_file\": \"false\", \"pe_parameters\": {\"fragment_counting_enabled\": {\"fragment_counting\": \"\", \"__current_case__\": 1}, \"only_both_ends\": \"false\", \"exclude_chimerics\": \"true\"}, \"strand_specificity\": \"0\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "2.0.1",
+            "type": "tool",
+            "uuid": "563587bd-b79c-4ab7-bbf6-90f94d0d3efb",
+            "workflow_outputs": [
+                {
+                    "label": "summary gene expression for SRR1554541",
+                    "output_name": "output_summary",
+                    "uuid": "ffb97f2c-9430-4c92-8559-be4354c9bab4"
+                },
+                {
+                    "label": "gene expression for SRR1554541",
+                    "output_name": "output_short",
+                    "uuid": "9e58d36e-3cb4-42af-bb99-0c0e91712992"
+                }
+            ]
+        },
+        "21": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/devteam/fastqc/fastqc/0.72+galaxy1",
+            "errors": null,
+            "id": 21,
+            "input_connections": {
+                "input_file": {
+                    "id": 14,
+                    "output_name": "output_alignments"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool FastQC",
+                    "name": "adapters"
+                },
+                {
+                    "description": "runtime parameter for tool FastQC",
+                    "name": "contaminants"
+                },
+                {
+                    "description": "runtime parameter for tool FastQC",
+                    "name": "input_file"
+                },
+                {
+                    "description": "runtime parameter for tool FastQC",
+                    "name": "limits"
+                }
+            ],
+            "label": "quality control of HISAT2 alignment of SRR1554535 with FastQC",
+            "name": "FastQC",
+            "outputs": [
+                {
+                    "name": "html_file",
+                    "type": "html"
+                },
+                {
+                    "name": "text_file",
+                    "type": "txt"
+                }
+            ],
+            "position": {
+                "bottom": 371.5729166666667,
+                "height": 249,
+                "left": 317.828125,
+                "right": 467.828125,
+                "top": 122.57291666666667,
+                "width": 150,
+                "x": 317.828125,
+                "y": 122.57291666666667
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/devteam/fastqc/fastqc/0.72+galaxy1",
+            "tool_shed_repository": {
+                "changeset_revision": "e7b2202befea",
+                "name": "fastqc",
+                "owner": "devteam",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"adapters\": {\"__class__\": \"RuntimeValue\"}, \"contaminants\": {\"__class__\": \"RuntimeValue\"}, \"input_file\": {\"__class__\": \"RuntimeValue\"}, \"kmers\": \"7\", \"limits\": {\"__class__\": \"RuntimeValue\"}, \"min_length\": null, \"nogroup\": \"false\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "0.72+galaxy1",
+            "type": "tool",
+            "uuid": "a25b1ac2-be62-47f3-8bc2-ece067df46a9",
+            "workflow_outputs": [
+                {
+                    "label": "FastQC on SRR1554535: raw",
+                    "output_name": "text_file",
+                    "uuid": "74f6958b-9d9c-4e80-b53f-75fc382da9f0"
+                },
+                {
+                    "label": "FastQC on SRR1554535: webpage",
+                    "output_name": "html_file",
+                    "uuid": "011d886b-5a8a-4886-949b-ea460d6ddfd3"
+                }
+            ]
+        },
+        "22": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/featurecounts/featurecounts/2.0.1",
+            "errors": null,
+            "id": 22,
+            "input_connections": {
+                "alignment": {
+                    "id": 14,
+                    "output_name": "output_alignments"
+                },
+                "anno|reference_gene_sets": {
+                    "id": 2,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool featureCounts",
+                    "name": "alignment"
+                },
+                {
+                    "description": "runtime parameter for tool featureCounts",
+                    "name": "anno"
+                }
+            ],
+            "label": "measure of gene expression of SRR1554535 with featureCounts",
+            "name": "featureCounts",
+            "outputs": [
+                {
+                    "name": "output_short",
+                    "type": "tabular"
+                },
+                {
+                    "name": "output_summary",
+                    "type": "tabular"
+                }
+            ],
+            "position": {
+                "bottom": 408.83854166666663,
+                "height": 189,
+                "left": 969.3125,
+                "right": 1119.3125,
+                "top": 219.83854166666666,
+                "width": 150,
+                "x": 969.3125,
+                "y": 219.83854166666666
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/featurecounts/featurecounts/2.0.1",
+            "tool_shed_repository": {
+                "changeset_revision": "ea04b737afa0",
+                "name": "featurecounts",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"__job_resource\": {\"__job_resource__select\": \"no\", \"__current_case__\": 0}, \"alignment\": {\"__class__\": \"RuntimeValue\"}, \"anno\": {\"anno_select\": \"history\", \"__current_case__\": 2, \"reference_gene_sets\": {\"__class__\": \"RuntimeValue\"}}, \"extended_parameters\": {\"gff_feature_type\": \"exon\", \"gff_feature_attribute\": \"gene_id\", \"summarization_level\": \"false\", \"multifeatures\": {\"multifeat\": \"\", \"__current_case__\": 0}, \"mapping_quality\": \"0\", \"exon_exon_junction_read_counting_enabled\": {\"count_exon_exon_junction_reads\": \"false\", \"__current_case__\": 1}, \"long_reads\": \"false\", \"by_read_group\": \"false\", \"largest_overlap\": \"false\", \"min_overlap\": \"1\", \"frac_overlap\": \"0\", \"frac_overlap_feature\": \"0\", \"read_extension_5p\": \"0\", \"read_extension_3p\": \"0\", \"read_reduction\": \"\", \"primary\": \"false\", \"ignore_dup\": \"false\", \"R\": \"false\", \"count_split_alignments_only\": \"false\"}, \"format\": \"tabdel_short\", \"include_feature_length_file\": \"false\", \"pe_parameters\": {\"fragment_counting_enabled\": {\"fragment_counting\": \"\", \"__current_case__\": 1}, \"only_both_ends\": \"false\", \"exclude_chimerics\": \"true\"}, \"strand_specificity\": \"0\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "2.0.1",
+            "type": "tool",
+            "uuid": "84bbccb8-65cb-4183-9e70-710ee82bb516",
+            "workflow_outputs": [
+                {
+                    "label": "summary gene expression for SRR1554535",
+                    "output_name": "output_summary",
+                    "uuid": "84ae9c8f-293d-4279-9382-b86317c788fe"
+                },
+                {
+                    "label": "gene expression for SRR1554535",
+                    "output_name": "output_short",
+                    "uuid": "fac7dc67-1b4b-4c86-b49d-ee00352a101a"
+                }
+            ]
+        },
+        "23": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/devteam/fastqc/fastqc/0.72+galaxy1",
+            "errors": null,
+            "id": 23,
+            "input_connections": {
+                "input_file": {
+                    "id": 15,
+                    "output_name": "output_alignments"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool FastQC",
+                    "name": "adapters"
+                },
+                {
+                    "description": "runtime parameter for tool FastQC",
+                    "name": "contaminants"
+                },
+                {
+                    "description": "runtime parameter for tool FastQC",
+                    "name": "input_file"
+                },
+                {
+                    "description": "runtime parameter for tool FastQC",
+                    "name": "limits"
+                }
+            ],
+            "label": "quality control of HISAT2 alignment of SRR1554538 with FastQC",
+            "name": "FastQC",
+            "outputs": [
+                {
+                    "name": "html_file",
+                    "type": "html"
+                },
+                {
+                    "name": "text_file",
+                    "type": "txt"
+                }
+            ],
+            "position": {
+                "bottom": -439.64583333333337,
+                "height": 249,
+                "left": 323.984375,
+                "right": 473.984375,
+                "top": -688.6458333333334,
+                "width": 150,
+                "x": 323.984375,
+                "y": -688.6458333333334
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/devteam/fastqc/fastqc/0.72+galaxy1",
+            "tool_shed_repository": {
+                "changeset_revision": "e7b2202befea",
+                "name": "fastqc",
+                "owner": "devteam",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"adapters\": {\"__class__\": \"RuntimeValue\"}, \"contaminants\": {\"__class__\": \"RuntimeValue\"}, \"input_file\": {\"__class__\": \"RuntimeValue\"}, \"kmers\": \"7\", \"limits\": {\"__class__\": \"RuntimeValue\"}, \"min_length\": null, \"nogroup\": \"false\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "0.72+galaxy1",
+            "type": "tool",
+            "uuid": "8f419294-7f67-4084-9a7b-eb8488e7ec75",
+            "workflow_outputs": [
+                {
+                    "label": "FastQC on SRR1554538 - raw",
+                    "output_name": "text_file",
+                    "uuid": "22eb549c-983c-42f6-a642-03a7c6b4e61c"
+                },
+                {
+                    "label": "FastQC on SRR1554538 - webpage",
+                    "output_name": "html_file",
+                    "uuid": "3c7cb185-f954-4e37-95d3-8f5392c9ba97"
+                }
+            ]
+        },
+        "24": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/featurecounts/featurecounts/2.0.1",
+            "errors": null,
+            "id": 24,
+            "input_connections": {
+                "alignment": {
+                    "id": 15,
+                    "output_name": "output_alignments"
+                },
+                "anno|reference_gene_sets": {
+                    "id": 2,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool featureCounts",
+                    "name": "alignment"
+                },
+                {
+                    "description": "runtime parameter for tool featureCounts",
+                    "name": "anno"
+                }
+            ],
+            "label": "measure of gene expression of SRR1554538 with featureCounts",
+            "name": "featureCounts",
+            "outputs": [
+                {
+                    "name": "output_short",
+                    "type": "tabular"
+                },
+                {
+                    "name": "output_summary",
+                    "type": "tabular"
+                }
+            ],
+            "position": {
+                "bottom": -340.66145833333337,
+                "height": 189,
+                "left": 973.734375,
+                "right": 1123.734375,
+                "top": -529.6614583333334,
+                "width": 150,
+                "x": 973.734375,
+                "y": -529.6614583333334
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/featurecounts/featurecounts/2.0.1",
+            "tool_shed_repository": {
+                "changeset_revision": "ea04b737afa0",
+                "name": "featurecounts",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"__job_resource\": {\"__job_resource__select\": \"no\", \"__current_case__\": 0}, \"alignment\": {\"__class__\": \"RuntimeValue\"}, \"anno\": {\"anno_select\": \"history\", \"__current_case__\": 2, \"reference_gene_sets\": {\"__class__\": \"RuntimeValue\"}}, \"extended_parameters\": {\"gff_feature_type\": \"exon\", \"gff_feature_attribute\": \"gene_id\", \"summarization_level\": \"false\", \"multifeatures\": {\"multifeat\": \"\", \"__current_case__\": 0}, \"mapping_quality\": \"0\", \"exon_exon_junction_read_counting_enabled\": {\"count_exon_exon_junction_reads\": \"false\", \"__current_case__\": 1}, \"long_reads\": \"false\", \"by_read_group\": \"false\", \"largest_overlap\": \"false\", \"min_overlap\": \"1\", \"frac_overlap\": \"0\", \"frac_overlap_feature\": \"0\", \"read_extension_5p\": \"0\", \"read_extension_3p\": \"0\", \"read_reduction\": \"\", \"primary\": \"false\", \"ignore_dup\": \"false\", \"R\": \"false\", \"count_split_alignments_only\": \"false\"}, \"format\": \"tabdel_short\", \"include_feature_length_file\": \"false\", \"pe_parameters\": {\"fragment_counting_enabled\": {\"fragment_counting\": \"\", \"__current_case__\": 1}, \"only_both_ends\": \"false\", \"exclude_chimerics\": \"true\"}, \"strand_specificity\": \"0\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "2.0.1",
+            "type": "tool",
+            "uuid": "30e4a671-0273-4f4a-a915-79d4fdab872b",
+            "workflow_outputs": [
+                {
+                    "label": "summary gene expression for SRR1554538",
+                    "output_name": "output_summary",
+                    "uuid": "111cfe1e-3df4-4d1f-a879-5d14b414d5c2"
+                },
+                {
+                    "label": "gene expression for SRR1554538",
+                    "output_name": "output_short",
+                    "uuid": "b0e0f2de-c796-4be4-a185-e6da773aab3c"
+                }
+            ]
+        },
+        "25": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/devteam/fastqc/fastqc/0.72+galaxy1",
+            "errors": null,
+            "id": 25,
+            "input_connections": {
+                "input_file": {
+                    "id": 16,
+                    "output_name": "output_alignments"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool FastQC",
+                    "name": "adapters"
+                },
+                {
+                    "description": "runtime parameter for tool FastQC",
+                    "name": "contaminants"
+                },
+                {
+                    "description": "runtime parameter for tool FastQC",
+                    "name": "input_file"
+                },
+                {
+                    "description": "runtime parameter for tool FastQC",
+                    "name": "limits"
+                }
+            ],
+            "label": "quality control of HISAT2 alignment of SRR1554534 with FastQC",
+            "name": "FastQC",
+            "outputs": [
+                {
+                    "name": "html_file",
+                    "type": "html"
+                },
+                {
+                    "name": "text_file",
+                    "type": "txt"
+                }
+            ],
+            "position": {
+                "bottom": 737.8072916666667,
+                "height": 264,
+                "left": 322.609375,
+                "right": 472.609375,
+                "top": 473.8072916666667,
+                "width": 150,
+                "x": 322.609375,
+                "y": 473.8072916666667
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/devteam/fastqc/fastqc/0.72+galaxy1",
+            "tool_shed_repository": {
+                "changeset_revision": "e7b2202befea",
+                "name": "fastqc",
+                "owner": "devteam",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"adapters\": {\"__class__\": \"RuntimeValue\"}, \"contaminants\": {\"__class__\": \"RuntimeValue\"}, \"input_file\": {\"__class__\": \"RuntimeValue\"}, \"kmers\": \"7\", \"limits\": {\"__class__\": \"RuntimeValue\"}, \"min_length\": null, \"nogroup\": \"false\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "0.72+galaxy1",
+            "type": "tool",
+            "uuid": "c00e2f33-b30f-416e-9832-e5c732ac1916",
+            "workflow_outputs": [
+                {
+                    "label": "FastQC on SRR1554534: raw",
+                    "output_name": "text_file",
+                    "uuid": "a78994d9-7767-42c5-be21-68afc21dd4a5"
+                },
+                {
+                    "label": "FastQC on SRR1554534: webpage",
+                    "output_name": "html_file",
+                    "uuid": "5276ef66-6fad-44b8-ac63-fdf2f78cdf46"
+                }
+            ]
+        },
+        "26": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/featurecounts/featurecounts/2.0.1",
+            "errors": null,
+            "id": 26,
+            "input_connections": {
+                "alignment": {
+                    "id": 16,
+                    "output_name": "output_alignments"
+                },
+                "anno|reference_gene_sets": {
+                    "id": 2,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool featureCounts",
+                    "name": "alignment"
+                },
+                {
+                    "description": "runtime parameter for tool featureCounts",
+                    "name": "anno"
+                }
+            ],
+            "label": "measure of gene expression of SRR1554534 with featureCounts",
+            "name": "featureCounts",
+            "outputs": [
+                {
+                    "name": "output_short",
+                    "type": "tabular"
+                },
+                {
+                    "name": "output_summary",
+                    "type": "tabular"
+                }
+            ],
+            "position": {
+                "bottom": 705.9010416666666,
+                "height": 189,
+                "left": 969.375,
+                "right": 1119.375,
+                "top": 516.9010416666666,
+                "width": 150,
+                "x": 969.375,
+                "y": 516.9010416666666
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/featurecounts/featurecounts/2.0.1",
+            "tool_shed_repository": {
+                "changeset_revision": "ea04b737afa0",
+                "name": "featurecounts",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"__job_resource\": {\"__job_resource__select\": \"no\", \"__current_case__\": 0}, \"alignment\": {\"__class__\": \"RuntimeValue\"}, \"anno\": {\"anno_select\": \"history\", \"__current_case__\": 2, \"reference_gene_sets\": {\"__class__\": \"RuntimeValue\"}}, \"extended_parameters\": {\"gff_feature_type\": \"exon\", \"gff_feature_attribute\": \"gene_id\", \"summarization_level\": \"false\", \"multifeatures\": {\"multifeat\": \"\", \"__current_case__\": 0}, \"mapping_quality\": \"0\", \"exon_exon_junction_read_counting_enabled\": {\"count_exon_exon_junction_reads\": \"false\", \"__current_case__\": 1}, \"long_reads\": \"false\", \"by_read_group\": \"false\", \"largest_overlap\": \"false\", \"min_overlap\": \"1\", \"frac_overlap\": \"0\", \"frac_overlap_feature\": \"0\", \"read_extension_5p\": \"0\", \"read_extension_3p\": \"0\", \"read_reduction\": \"\", \"primary\": \"false\", \"ignore_dup\": \"false\", \"R\": \"false\", \"count_split_alignments_only\": \"false\"}, \"format\": \"tabdel_short\", \"include_feature_length_file\": \"false\", \"pe_parameters\": {\"fragment_counting_enabled\": {\"fragment_counting\": \"\", \"__current_case__\": 1}, \"only_both_ends\": \"false\", \"exclude_chimerics\": \"true\"}, \"strand_specificity\": \"0\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "2.0.1",
+            "type": "tool",
+            "uuid": "d39db7fa-32be-402e-9d02-d070a1c9f416",
+            "workflow_outputs": [
+                {
+                    "label": "gene expression for SRR1554534",
+                    "output_name": "output_short",
+                    "uuid": "9f2bf9c7-04c7-4fe1-8c71-fc9e701b88df"
+                },
+                {
+                    "label": "summary gene expression for SRR155454334",
+                    "output_name": "output_summary",
+                    "uuid": "69cd0f30-4930-4a7c-a5ff-dbcc546a792f"
+                }
+            ]
+        },
+        "27": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/devteam/fastqc/fastqc/0.72+galaxy1",
+            "errors": null,
+            "id": 27,
+            "input_connections": {
+                "input_file": {
+                    "id": 17,
+                    "output_name": "output_alignments"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool FastQC",
+                    "name": "adapters"
+                },
+                {
+                    "description": "runtime parameter for tool FastQC",
+                    "name": "contaminants"
+                },
+                {
+                    "description": "runtime parameter for tool FastQC",
+                    "name": "input_file"
+                },
+                {
+                    "description": "runtime parameter for tool FastQC",
+                    "name": "limits"
+                }
+            ],
+            "label": "quality control of HISAT2 alignment of SRR1554539 with FastQC",
+            "name": "FastQC",
+            "outputs": [
+                {
+                    "name": "html_file",
+                    "type": "html"
+                },
+                {
+                    "name": "text_file",
+                    "type": "txt"
+                }
+            ],
+            "position": {
+                "bottom": 1102.8385416666665,
+                "height": 264,
+                "left": 324.828125,
+                "right": 474.828125,
+                "top": 838.8385416666666,
+                "width": 150,
+                "x": 324.828125,
+                "y": 838.8385416666666
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/devteam/fastqc/fastqc/0.72+galaxy1",
+            "tool_shed_repository": {
+                "changeset_revision": "e7b2202befea",
+                "name": "fastqc",
+                "owner": "devteam",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"adapters\": {\"__class__\": \"RuntimeValue\"}, \"contaminants\": {\"__class__\": \"RuntimeValue\"}, \"input_file\": {\"__class__\": \"RuntimeValue\"}, \"kmers\": \"7\", \"limits\": {\"__class__\": \"RuntimeValue\"}, \"min_length\": null, \"nogroup\": \"false\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "0.72+galaxy1",
+            "type": "tool",
+            "uuid": "593a8661-a4c9-4571-9642-1f664de1adb4",
+            "workflow_outputs": [
+                {
+                    "label": "FastQC on SRR1554539: webpage",
+                    "output_name": "html_file",
+                    "uuid": "b67cfac7-2135-44b4-b092-da9f85d7012c"
+                },
+                {
+                    "label": "FastQC on SRR1554539: raw",
+                    "output_name": "text_file",
+                    "uuid": "c8e31436-180e-40d2-a6cb-5c665b67b2fc"
+                }
+            ]
+        },
+        "28": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/featurecounts/featurecounts/2.0.1",
+            "errors": null,
+            "id": 28,
+            "input_connections": {
+                "alignment": {
+                    "id": 17,
+                    "output_name": "output_alignments"
+                },
+                "anno|reference_gene_sets": {
+                    "id": 2,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool featureCounts",
+                    "name": "alignment"
+                },
+                {
+                    "description": "runtime parameter for tool featureCounts",
+                    "name": "anno"
+                }
+            ],
+            "label": "measure of gene expression of SRR1554539 with featureCounts",
+            "name": "featureCounts",
+            "outputs": [
+                {
+                    "name": "output_short",
+                    "type": "tabular"
+                },
+                {
+                    "name": "output_summary",
+                    "type": "tabular"
+                }
+            ],
+            "position": {
+                "bottom": 1006.7916666666666,
+                "height": 189,
+                "left": 971.328125,
+                "right": 1121.328125,
+                "top": 817.7916666666666,
+                "width": 150,
+                "x": 971.328125,
+                "y": 817.7916666666666
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/featurecounts/featurecounts/2.0.1",
+            "tool_shed_repository": {
+                "changeset_revision": "ea04b737afa0",
+                "name": "featurecounts",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"__job_resource\": {\"__job_resource__select\": \"no\", \"__current_case__\": 0}, \"alignment\": {\"__class__\": \"RuntimeValue\"}, \"anno\": {\"anno_select\": \"history\", \"__current_case__\": 2, \"reference_gene_sets\": {\"__class__\": \"RuntimeValue\"}}, \"extended_parameters\": {\"gff_feature_type\": \"exon\", \"gff_feature_attribute\": \"gene_id\", \"summarization_level\": \"false\", \"multifeatures\": {\"multifeat\": \"\", \"__current_case__\": 0}, \"mapping_quality\": \"0\", \"exon_exon_junction_read_counting_enabled\": {\"count_exon_exon_junction_reads\": \"false\", \"__current_case__\": 1}, \"long_reads\": \"false\", \"by_read_group\": \"false\", \"largest_overlap\": \"false\", \"min_overlap\": \"1\", \"frac_overlap\": \"0\", \"frac_overlap_feature\": \"0\", \"read_extension_5p\": \"0\", \"read_extension_3p\": \"0\", \"read_reduction\": \"\", \"primary\": \"false\", \"ignore_dup\": \"false\", \"R\": \"false\", \"count_split_alignments_only\": \"false\"}, \"format\": \"tabdel_short\", \"include_feature_length_file\": \"false\", \"pe_parameters\": {\"fragment_counting_enabled\": {\"fragment_counting\": \"\", \"__current_case__\": 1}, \"only_both_ends\": \"false\", \"exclude_chimerics\": \"true\"}, \"strand_specificity\": \"0\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "2.0.1",
+            "type": "tool",
+            "uuid": "56d356bd-ae40-43ef-a343-77e08decebc9",
+            "workflow_outputs": [
+                {
+                    "label": "summary gene expression for SRR1554539",
+                    "output_name": "output_summary",
+                    "uuid": "723c999d-f9c0-4f13-ba1f-fccb215149bb"
+                },
+                {
+                    "label": "gene expression for SRR1554539",
+                    "output_name": "output_short",
+                    "uuid": "36b0581a-2936-41b6-b329-560042d01e97"
+                }
+            ]
+        },
+        "29": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/devteam/fastqc/fastqc/0.72+galaxy1",
+            "errors": null,
+            "id": 29,
+            "input_connections": {
+                "input_file": {
+                    "id": 18,
+                    "output_name": "output_alignments"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool FastQC",
+                    "name": "adapters"
+                },
+                {
+                    "description": "runtime parameter for tool FastQC",
+                    "name": "contaminants"
+                },
+                {
+                    "description": "runtime parameter for tool FastQC",
+                    "name": "input_file"
+                },
+                {
+                    "description": "runtime parameter for tool FastQC",
+                    "name": "limits"
+                }
+            ],
+            "label": "quality control of HISAT2 alignment of SRR1554537 with FastQC",
+            "name": "FastQC",
+            "outputs": [
+                {
+                    "name": "html_file",
+                    "type": "html"
+                },
+                {
+                    "name": "text_file",
+                    "type": "txt"
+                }
+            ],
+            "position": {
+                "bottom": -819.9270833333333,
+                "height": 249,
+                "left": 320.921875,
+                "right": 470.921875,
+                "top": -1068.9270833333333,
+                "width": 150,
+                "x": 320.921875,
+                "y": -1068.9270833333333
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/devteam/fastqc/fastqc/0.72+galaxy1",
+            "tool_shed_repository": {
+                "changeset_revision": "e7b2202befea",
+                "name": "fastqc",
+                "owner": "devteam",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"adapters\": {\"__class__\": \"RuntimeValue\"}, \"contaminants\": {\"__class__\": \"RuntimeValue\"}, \"input_file\": {\"__class__\": \"RuntimeValue\"}, \"kmers\": \"7\", \"limits\": {\"__class__\": \"RuntimeValue\"}, \"min_length\": null, \"nogroup\": \"false\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "0.72+galaxy1",
+            "type": "tool",
+            "uuid": "808fec62-a16d-464e-8b1c-196127f7fae1",
+            "workflow_outputs": [
+                {
+                    "label": "FastQC on SRR1554537 - webpage",
+                    "output_name": "html_file",
+                    "uuid": "de87842a-ece6-461a-9b41-7cbf22b7f011"
+                },
+                {
+                    "label": "FastQC on SRR1554537 - raw",
+                    "output_name": "text_file",
+                    "uuid": "5fea4676-75e0-4242-9ae8-7292f6b2e76b"
+                }
+            ]
+        },
+        "30": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/featurecounts/featurecounts/2.0.1",
+            "errors": null,
+            "id": 30,
+            "input_connections": {
+                "alignment": {
+                    "id": 18,
+                    "output_name": "output_alignments"
+                },
+                "anno|reference_gene_sets": {
+                    "id": 2,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool featureCounts",
+                    "name": "alignment"
+                },
+                {
+                    "description": "runtime parameter for tool featureCounts",
+                    "name": "anno"
+                }
+            ],
+            "label": "measure of gene expression of SRR1554537 with featureCounts",
+            "name": "featureCounts",
+            "outputs": [
+                {
+                    "name": "output_short",
+                    "type": "tabular"
+                },
+                {
+                    "name": "output_summary",
+                    "type": "tabular"
+                }
+            ],
+            "position": {
+                "bottom": -656.8802083333334,
+                "height": 189,
+                "left": 974.78125,
+                "right": 1124.78125,
+                "top": -845.8802083333334,
+                "width": 150,
+                "x": 974.78125,
+                "y": -845.8802083333334
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/featurecounts/featurecounts/2.0.1",
+            "tool_shed_repository": {
+                "changeset_revision": "ea04b737afa0",
+                "name": "featurecounts",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"__job_resource\": {\"__job_resource__select\": \"no\", \"__current_case__\": 0}, \"alignment\": {\"__class__\": \"RuntimeValue\"}, \"anno\": {\"anno_select\": \"history\", \"__current_case__\": 2, \"reference_gene_sets\": {\"__class__\": \"RuntimeValue\"}}, \"extended_parameters\": {\"gff_feature_type\": \"exon\", \"gff_feature_attribute\": \"gene_id\", \"summarization_level\": \"false\", \"multifeatures\": {\"multifeat\": \"\", \"__current_case__\": 0}, \"mapping_quality\": \"0\", \"exon_exon_junction_read_counting_enabled\": {\"count_exon_exon_junction_reads\": \"false\", \"__current_case__\": 1}, \"long_reads\": \"false\", \"by_read_group\": \"false\", \"largest_overlap\": \"false\", \"min_overlap\": \"1\", \"frac_overlap\": \"0\", \"frac_overlap_feature\": \"0\", \"read_extension_5p\": \"0\", \"read_extension_3p\": \"0\", \"read_reduction\": \"\", \"primary\": \"false\", \"ignore_dup\": \"false\", \"R\": \"false\", \"count_split_alignments_only\": \"false\"}, \"format\": \"tabdel_short\", \"include_feature_length_file\": \"false\", \"pe_parameters\": {\"fragment_counting_enabled\": {\"fragment_counting\": \"\", \"__current_case__\": 1}, \"only_both_ends\": \"false\", \"exclude_chimerics\": \"true\"}, \"strand_specificity\": \"0\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "2.0.1",
+            "type": "tool",
+            "uuid": "3366d202-a677-4314-b713-c45ae79af4d5",
+            "workflow_outputs": [
+                {
+                    "label": "summary gene expression for SRR1554537",
+                    "output_name": "output_summary",
+                    "uuid": "2b6c4c27-9ca5-4349-94a1-d406f6511789"
+                },
+                {
+                    "label": "gene expression for SRR1554537",
+                    "output_name": "output_short",
+                    "uuid": "2ae20237-04f2-4bdd-9ae3-dc96fdcb01a1"
+                }
+            ]
+        },
+        "31": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/multiqc/multiqc/1.8+galaxy1",
+            "errors": null,
+            "id": 31,
+            "input_connections": {
+                "results_0|software_cond|output_0|input": {
+                    "id": 25,
+                    "output_name": "text_file"
+                },
+                "results_1|software_cond|output_0|input": {
+                    "id": 21,
+                    "output_name": "text_file"
+                },
+                "results_2|software_cond|output_0|input": {
+                    "id": 27,
+                    "output_name": "text_file"
+                },
+                "results_3|software_cond|input": {
+                    "id": 16,
+                    "output_name": "summary_file"
+                },
+                "results_4|software_cond|input": {
+                    "id": 14,
+                    "output_name": "summary_file"
+                },
+                "results_5|software_cond|input": {
+                    "id": 17,
+                    "output_name": "summary_file"
+                }
+            },
+            "inputs": [],
+            "label": "MultiQC quality report for adult samples",
+            "name": "MultiQC",
+            "outputs": [
+                {
+                    "name": "stats",
+                    "type": "input"
+                },
+                {
+                    "name": "plots",
+                    "type": "input"
+                },
+                {
+                    "name": "html_report",
+                    "type": "html"
+                }
+            ],
+            "position": {
+                "bottom": 918.7291666666666,
+                "height": 376.5,
+                "left": 678.65625,
+                "right": 828.65625,
+                "top": 542.2291666666666,
+                "width": 150,
+                "x": 678.65625,
+                "y": 542.2291666666666
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/multiqc/multiqc/1.8+galaxy1",
+            "tool_shed_repository": {
+                "changeset_revision": "5e33b465d8d5",
+                "name": "multiqc",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"comment\": \"\", \"flat\": \"false\", \"results\": [{\"__index__\": 0, \"software_cond\": {\"software\": \"fastqc\", \"__current_case__\": 8, \"output\": [{\"__index__\": 0, \"type\": \"data\", \"input\": {\"__class__\": \"RuntimeValue\"}}]}}, {\"__index__\": 1, \"software_cond\": {\"software\": \"fastqc\", \"__current_case__\": 8, \"output\": [{\"__index__\": 0, \"type\": \"data\", \"input\": {\"__class__\": \"RuntimeValue\"}}]}}, {\"__index__\": 2, \"software_cond\": {\"software\": \"fastqc\", \"__current_case__\": 8, \"output\": [{\"__index__\": 0, \"type\": \"data\", \"input\": {\"__class__\": \"RuntimeValue\"}}]}}, {\"__index__\": 3, \"software_cond\": {\"software\": \"hisat2\", \"__current_case__\": 13, \"input\": {\"__class__\": \"RuntimeValue\"}}}, {\"__index__\": 4, \"software_cond\": {\"software\": \"hisat2\", \"__current_case__\": 13, \"input\": {\"__class__\": \"RuntimeValue\"}}}, {\"__index__\": 5, \"software_cond\": {\"software\": \"hisat2\", \"__current_case__\": 13, \"input\": {\"__class__\": \"RuntimeValue\"}}}], \"saveLog\": \"false\", \"title\": \"fetal\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.8+galaxy1",
+            "type": "tool",
+            "uuid": "345e8a8a-811d-4ca1-ba7c-911f36525d35",
+            "workflow_outputs": [
+                {
+                    "label": "MultiQC report webpag Adult samples",
+                    "output_name": "html_report",
+                    "uuid": "71390e63-ae8c-4e2e-9c8b-37462b365060"
+                },
+                {
+                    "label": "MultiQC report raw Adult samples",
+                    "output_name": "stats",
+                    "uuid": "fec17e3f-966e-47f5-9ad7-4393495c6e5e"
+                },
+                {
+                    "label": "MultiQC report Plot Adult samples",
+                    "output_name": "plots",
+                    "uuid": "6156ab2b-e986-415a-a66a-5ed03796b96c"
+                }
+            ]
+        },
+        "32": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/multiqc/multiqc/1.8+galaxy1",
+            "errors": null,
+            "id": 32,
+            "input_connections": {
+                "results_0|software_cond|output_0|input": {
+                    "id": 23,
+                    "output_name": "text_file"
+                },
+                "results_0|software_cond|output_1|input": {
+                    "id": 29,
+                    "output_name": "text_file"
+                },
+                "results_0|software_cond|output_2|input": {
+                    "id": 19,
+                    "output_name": "text_file"
+                },
+                "results_1|software_cond|input": {
+                    "id": 15,
+                    "output_name": "summary_file"
+                },
+                "results_2|software_cond|input": {
+                    "id": 18,
+                    "output_name": "summary_file"
+                },
+                "results_3|software_cond|input": {
+                    "id": 13,
+                    "output_name": "summary_file"
+                }
+            },
+            "inputs": [],
+            "label": "MultiQC quality report for fetal samples",
+            "name": "MultiQC",
+            "outputs": [
+                {
+                    "name": "stats",
+                    "type": "input"
+                },
+                {
+                    "name": "plots",
+                    "type": "input"
+                },
+                {
+                    "name": "html_report",
+                    "type": "html"
+                }
+            ],
+            "position": {
+                "bottom": -327.77083333333337,
+                "height": 376.5,
+                "left": 657.40625,
+                "right": 807.40625,
+                "top": -704.2708333333334,
+                "width": 150,
+                "x": 657.40625,
+                "y": -704.2708333333334
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/multiqc/multiqc/1.8+galaxy1",
+            "tool_shed_repository": {
+                "changeset_revision": "5e33b465d8d5",
+                "name": "multiqc",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"comment\": \"\", \"flat\": \"false\", \"results\": [{\"__index__\": 0, \"software_cond\": {\"software\": \"fastqc\", \"__current_case__\": 8, \"output\": [{\"__index__\": 0, \"type\": \"data\", \"input\": {\"__class__\": \"RuntimeValue\"}}, {\"__index__\": 1, \"type\": \"data\", \"input\": {\"__class__\": \"RuntimeValue\"}}, {\"__index__\": 2, \"type\": \"data\", \"input\": {\"__class__\": \"RuntimeValue\"}}]}}, {\"__index__\": 1, \"software_cond\": {\"software\": \"hisat2\", \"__current_case__\": 13, \"input\": {\"__class__\": \"RuntimeValue\"}}}, {\"__index__\": 2, \"software_cond\": {\"software\": \"hisat2\", \"__current_case__\": 13, \"input\": {\"__class__\": \"RuntimeValue\"}}}, {\"__index__\": 3, \"software_cond\": {\"software\": \"hisat2\", \"__current_case__\": 13, \"input\": {\"__class__\": \"RuntimeValue\"}}}], \"saveLog\": \"false\", \"title\": \"Adults\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.8+galaxy1",
+            "type": "tool",
+            "uuid": "44793089-5cfd-416e-afdf-79f206ae3eff",
+            "workflow_outputs": [
+                {
+                    "label": "MultiQC report raw Fetal samples",
+                    "output_name": "stats",
+                    "uuid": "531078c7-d808-4d1b-bf3a-2bfce2365f39"
+                },
+                {
+                    "label": "MultiQC report webpage Fetal samples",
+                    "output_name": "html_report",
+                    "uuid": "31ac22ab-dd6c-40d5-92e8-bde016a23383"
+                },
+                {
+                    "label": "MultiQC report plots Fetal",
+                    "output_name": "plots",
+                    "uuid": "4a0dc6dd-bace-43a6-8b48-e3f4c5a22d99"
+                }
+            ]
+        },
+        "33": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_multijoin_tool/1.1.1",
+            "errors": null,
+            "id": 33,
+            "input_connections": {
+                "files": [
+                    {
+                        "id": 26,
+                        "output_name": "output_short"
+                    },
+                    {
+                        "id": 30,
+                        "output_name": "output_short"
+                    },
+                    {
+                        "id": 20,
+                        "output_name": "output_short"
+                    },
+                    {
+                        "id": 22,
+                        "output_name": "output_short"
+                    },
+                    {
+                        "id": 28,
+                        "output_name": "output_short"
+                    }
+                ],
+                "first_file": {
+                    "id": 24,
+                    "output_name": "output_short"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool Multi-Join",
+                    "name": "files"
+                },
+                {
+                    "description": "runtime parameter for tool Multi-Join",
+                    "name": "first_file"
+                }
+            ],
+            "label": "combination of gene expression for the different samples with Multi-Join",
+            "name": "Multi-Join",
+            "outputs": [
+                {
+                    "name": "outfile",
+                    "type": "tabular"
+                }
+            ],
+            "position": {
+                "bottom": 176.19791666666666,
+                "height": 151.5,
+                "left": 1454.890625,
+                "right": 1604.890625,
+                "top": 24.697916666666668,
+                "width": 150,
+                "x": 1454.890625,
+                "y": 24.697916666666668
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_multijoin_tool/1.1.1",
+            "tool_shed_repository": {
+                "changeset_revision": "ddf54b12c295",
+                "name": "text_processing",
+                "owner": "bgruening",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"files\": {\"__class__\": \"RuntimeValue\"}, \"filler\": \"0\", \"first_file\": {\"__class__\": \"RuntimeValue\"}, \"ignore_dups\": \"false\", \"input_header\": \"false\", \"key_column\": \"1\", \"output_header\": \"false\", \"value_columns\": \"\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.1.1",
+            "type": "tool",
+            "uuid": "78d602ea-cef8-49f2-a112-873ea7e95382",
+            "workflow_outputs": [
+                {
+                    "label": "combined_gene_expression_results",
+                    "output_name": "outfile",
+                    "uuid": "a9f18bac-964e-4bdc-9566-3e159712ecde"
+                }
+            ]
+        }
+    },
+    "tags": [],
+    "uuid": "821c45b5-34fd-4175-85d4-63140fd99802",
+    "version": 1
+}
