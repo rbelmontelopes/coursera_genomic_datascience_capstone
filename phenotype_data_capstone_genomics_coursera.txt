@@ -1,0 +1,7 @@
+Acession  isolate  age  sex  RIN
+SRR1554534  R2857 40.42 male  8.4
+SRR1554535  R2869 41.58 male  8.7
+SRR1554539  R3467 36.5  female  9
+SRR1554537  R3452 -38.36  female  9.6
+SRR1554538  R3462 -0.4027 female  6.4   
+SRR1554541  R3485 -0.3836 male  5.7
