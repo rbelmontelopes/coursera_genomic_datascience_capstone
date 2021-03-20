@@ -1,0 +1,287 @@
+---
+title: "genomic_data_science_capstone"
+author: "Ricardo Belmonte Lopes"
+date: "20/03/2021"
+output: html_document
+---
+## Read data from the tab delimited file of gene expression genereated in Galaxy
+```{r read tab delimited gene expression and generates filtered data to exclude zero count genes}
+counts = read.table("Genes_per_sample_featurecounts.tabular", header=TRUE, row.names=1)
+head(counts)
+counts_filtered = counts[rowSums(counts) > 0,]
+colSums(counts_filtered)
+```
+##Make plots of the raw data by sample
+```{r make plots of the untransformed data for each sample}
+library(graphics)
+plot(counts[,1], ylab=colnames(counts)[1])
+plot(counts[,2], ylab=colnames(counts)[2])
+plot(counts[,3], ylab=colnames(counts)[3])
+plot(counts[,4], ylab=colnames(counts)[4])
+plot(counts[,5], ylab=colnames(counts)[5])
+plot(counts[,6], ylab=colnames(counts)[6])
+```
+
+
+## Make plots of the data filtered to exclude zero count genes
+```{r make plots of the filtered data}
+plot(counts_filtered[,1], ylab=colnames(counts_filtered)[1])
+plot(counts_filtered[,2], ylab=colnames(counts_filtered)[2])
+plot(counts_filtered[,3], ylab=colnames(counts_filtered)[3])
+plot(counts_filtered[,4], ylab=colnames(counts_filtered)[4])
+plot(counts_filtered[,5], ylab=colnames(counts_filtered)[5])
+plot(counts_filtered[,6], ylab=colnames(counts_filtered)[6])
+```
+
+
+##Make plots of the log2 transformed data
+```{r make plots of log2 transformed data}
+plot(log2(counts_filtered[,1]+1), ylab=colnames(counts_filtered)[1])
+plot(log2(counts_filtered[,2]+1), ylab=colnames(counts_filtered)[2])
+plot(log2(counts_filtered[,3]+1), ylab=colnames(counts_filtered)[3])
+plot(log2(counts_filtered[,4]+1), ylab=colnames(counts_filtered)[4])
+plot(log2(counts_filtered[,5]+1), ylab=colnames(counts_filtered)[5])
+plot(log2(counts_filtered[,6]+1), ylab=colnames(counts_filtered)[6])
+```
+##Make boxplots of the counts filtered and log2 transformed
+```{r make boxplots of the counts filtered and log2 transformed}
+par(mar=c(7,5,1,1))
+boxplot(counts_filtered, las=2, main="filtered data")
+boxplot(log2(counts_filtered+1), las=2, main="log2 transformed data")
+```
+##Read phenotype data downloaded from NCBI and add a column for age group
+```{r read phenotype data downloaded from NCBI}
+phenotype = read.table("phenotype_data_capstone_genomics_coursera.txt", header=TRUE, dec=".")
+phenotype["age_group"]=as.factor(c("adult","adult", "adult", "fetal", "fetal", "fetal"))
+```
+
+##Annotate gene names
+```{r annotate gene names}
+library(annotate)
+library(org.Hs.eg.db)
+org.Hs.eg()
+select(org.Hs.eg.db, keys="NM_001001578", columns = "SYMBOL", keytype = "ACCNUM")
+names  = substr(rownames(counts), 1, nchar(rownames(counts))-2)
+rownames(counts) = names
+gen_symbols = select(org.Hs.eg.db, keys=names, columns = "SYMBOL", keytype = "ACCNUM")
+counts["symbol"] = gen_symbols[,2]
+```
+
+##Further filter the data to include only genes with counts higher than 10
+```{r further filter the data to include only genes with counts higher than 10}
+counts_filtered10 = counts[rowSums(counts[1:6]) > 10,]
+```
+
+##Generate expression counts by gene
+```{r generate counts by gene}
+counts_bygene = aggregate(counts_filtered10[,1:6], by=list(counts_filtered10[,"symbol"]), sum)
+rownames(counts_bygene) = counts_bygene[,1]
+counts_bygene$Group.1 <- NULL
+head(counts_bygene)
+```
+
+##Generate boxplots of counts by gene
+```{r generate boxplots of counts by gene}
+par(mar=c(7,5,1,1))
+boxplot(counts_bygene, las=2, ylab = "counts")
+```
+
+##Log2 transform the counts by sample
+```{r log2 transform the counts by sample}
+l2_counts = log2(counts_bygene+1)
+```
+
+##Generate a Summarized Experiment object
+```{r generate a summarized experiment object}
+library(SummarizedExperiment)
+phenotype[,4] = as.factor(phenotype[,4])
+Cdata = SummarizedExperiment(assays=counts_bygene, colData=phenotype)
+```
+
+##Generate objects for the DSeq2 package analysis using transformed and untransformed data
+Generate model with all factors for transformed and untransformed data, and a simple model including only age group for the transformed data
+```{r generate a DSeq2 object}
+library(DESeq2)
+dseq = DESeqDataSetFromMatrix(assay(Cdata), colData(Cdata), ~ age_group+sex+RIN)
+dseq_not_transformed = DESeqDataSetFromMatrix(assay(Cdata), colData(Cdata), ~ age_group+sex+RIN)
+dseq_age = DESeqDataSetFromMatrix(assay(Cdata), colData(Cdata), ~ age_group)
+```
+
+##Normalize the data and perform PCA of DSeq2 object
+```{r normalize the data and perform PCA of DSeq2 object}
+dseq_norm = varianceStabilizingTransformation(dseq)
+count_pca = prcomp(assay(dseq_norm), center=TRUE, scale=TRUE)
+pca = princomp(assay(dseq_norm), cor=TRUE)
+```
+
+##Generate plots of the PCA using ggplot
+First, transform the count_pca object to a dataframe to use in ggplot, then generate the plots
+```{r generate plots of the PCA using ggplot}
+library(ggplot2)
+dat = data.frame(X=count_pca$rotation[,1], Y=count_pca$rotation[,2], age_group=phenotype$age_group, RIN=phenotype$RIN, SEX=phenotype$sex)
+boxplot(log2(counts_bygene+1), las=2, ylab = "log2(counts+1)", cex.axis=0.8, names = c("adult -SRR1554534", "adult - SRR1554535", "adult - SRR1554539", "fetal - SRR1554537", "fetal - SRR1554538", "fetal - SRR1554541"))
+boxplot(assay(dseq_norm), las=2, ylab = "transformed by variance stabilizing", cex.axis=0.8, names = c("adult -SRR1554534", "adult - SRR1554535", "adult - SRR1554539", "fetal - SRR1554537", "fetal - SRR1554538", "fetal - SRR1554541"))
+plot(pca)
+```
+
+##Run DESeq2 analysis for transformed and untransformed data
+Run DESeq2 analysis for transformed and untransformed data with all variables as response, and with only age group as response for the transformed data, to compare the number of differentially expressed genes with a p-adjusted value lower than 0.05
+```{r run DESeq2 analysis for transformed and untransformed data}
+dseq_nottransformed_results = DESeq(dseq_not_transformed)
+dseq_results = DESeq(dseq)
+dseq_age_results = DESeq(dseq_age)
+sum(results(dseq_nottransformed_results)$padj < 0.05, na.rm=TRUE)
+sum(results(dseq_results)$padj < 0.05, na.rm=TRUE)
+sum(results(dseq_age_results)$padj < 0.05, na.rm=TRUE)
+```
+
+##Extract and log transform data for limma analysis
+```{r extract and log transform data for limma analysis}
+edata = assay(Cdata)
+head(edata)
+edata_lg2 = log2(edata + 1)
+head(edata_lg2)
+dim(edata_lg2)
+edata_lg2_filt = edata_lg2[rowMeans(edata_lg2) > 10, ]
+dim(edata_lg2_filt)
+```
+
+##Run limma analysis
+```{r run limma analysis}
+library(limma)
+library(edgeR)
+model = model.matrix(~ Cdata$age_group)
+fit_limma = lmFit(edata_lg2_filt, model)
+ebayes = eBayes(fit_limma)
+ebayes
+limma_table = topTable(ebayes, number=length(rownames(edata_lg2_filt)))
+head(limma_table)
+limma_table_output = limma_table[,c(1,4,5)]
+head(limma_table_output)
+```
+
+##Save tab delimited file of all differentially expressed genes
+```{r save tab delimited file of differentially expressed genes}
+write.table(limma_table_output, file="genes_dif_expr.txt", sep="\t", row.names = TRUE, col.names = TRUE)
+```
+
+##Generates Volcano plot
+```{r generates Volcano plot}
+par(mar=c(5,5,1,1))
+with(limma_table, plot(logFC, -log10(adj.P.Val), pch=20, main="Volcano plot"))
+with(subset(limma_table, adj.P.Val < 0.05), points(logFC, -log10(adj.P.Val), pch=20, col="red"))
+```
+
+##Filter differentially expressed genes by adjusted values of p lower than 0.05
+Filter the differentially expressed genes by adjusted p values and generates objects for upregulated and downregulated genes
+```{r filter differentially expressed genes by adjusted values of p lower than 0.05}
+dif_expr = limma_table_output[limma_table_output$adj.P.Val < 0.05,]
+downreg = limma_table_output[limma_table_output$adj.P.Val < 0.05 & limma_table_output$logFC > 1,]
+upreg = limma_table_output[limma_table_output$adj.P.Val < 0.05 & limma_table_output$logFC < -1,]
+dim(dif_expr)
+dim(downreg)
+dim(upreg)
+```
+
+##Generates boxplots of differentially expressed genes
+```{r generates boxplots of differentially expressed genes}
+edata_l2filt_difexp = edata_lg2_filt[rownames(dif_expr),]
+edata_l2filt_downreg = edata_lg2_filt[rownames(downreg),]
+edata_l2filt_upreg = edata_lg2_filt[rownames(upreg),]
+par(mar=c(8,5,1,1))
+boxplot(edata_l2filt_difexp, las=2, main="diferential expression by sample", ylab = "log2(counts+1)", cex.axis=0.8, names = c("adult -SRR1554534", "adult - SRR1554535", "adult - SRR1554539", "fetal - SRR1554537", "fetal - SRR1554538", "fetal - SRR1554541"))
+boxplot(edata_l2filt_downreg, las=2, main="downregulated genes by sample", ylab = "log2(counts+1)", cex.axis=0.8, names = c("adult -SRR1554534", "adult - SRR1554535", "adult - SRR1554539", "fetal - SRR1554537", "fetal - SRR1554538", "fetal - SRR1554541"))
+boxplot(edata_l2filt_upreg, las=2, main="upregulated genes by sample", ylab = "log2(counts+1)", cex.axis=0.8, names = c("adult -SRR1554534", "adult - SRR1554535", "adult - SRR1554539", "fetal - SRR1554537", "fetal - SRR1554538", "fetal - SRR1554541"))
+```
+
+##Generate dispersion plot of the total number of up and downregulated genes by sample
+```{r generate dispersion plot of the total number of up and downregulated genes by sample}
+library(ggrepel)
+up_down = data.frame(colSums(edata_l2filt_upreg), colSums(edata_l2filt_downreg))
+colnames(up_down) = c("upregulated genes [log2(counts+1)]", "downregulated genes [log2(counts+1)]")
+row.names(up_down) = c("adult - SRR1554534", "adult - SRR1554535", "adult - SRR1554539", "fetal - SRR1554537", "fetal - SRR1554538", "fetal - SRR1554541")
+up_down_plot = ggplot(up_down, aes(x= `upregulated genes [log2(counts+1)]`, y=`downregulated genes [log2(counts+1)]`))+geom_point(size=5)
+up_down_plot + geom_label_repel(aes(label=row.names(up_down)), size=3)
+```
+
+##Get methylation narrow peaks for H3K4me3 using AnnotationHub, to compare with the diffentially expressed genes 
+```{r get methylation narrow peaks}
+library(AnnotationHub)
+ah <- AnnotationHub()
+ah <- subset(ah, species == "Homo sapiens")
+ah_fetal <- query(ah, c("EpigenomeRoadMap", "H3K4me3"))
+fetal_met <- ah_fetal[["AH30471"]]
+ah_adult <- query(ah, c("EpigenomeRoadMap", "H3K4me3"))
+adult_met <- ah_adult[["AH30413"]]
+ah_liver <- query(ah, c("EpigenomeRoadMap", "H3K4me3"))
+liver_met <- ah_liver[["AH30367"]]
+```
+
+##Get gene Symbols from limma results and convert to Entrez ID
+```{r get gene Symbols from limma results and convert to Entrez ID}
+library(mygene)
+dif_exp_genes = row.names(limma_table[limma_table$adj.P.Val < 0.05,])
+dif_exp_gene_ids = queryMany(dif_exp_genes, scopes = "symbol", fields = "entrezgene", species = "human" )
+head(dif_exp_gene_ids)
+dif_exp_gene_entrez = na.omit(dif_exp_gene_ids$entrezgene)
+```
+
+##Generate intervals of genes plus promoters for the differentially expressed genes
+```{r generate intervals of genes plus promoters for the differentially expressed genes}
+library(TxDb.Hsapiens.UCSC.hg19.knownGene)
+txdb <- TxDb.Hsapiens.UCSC.hg19.knownGene
+txdb_genes <- genes(txdb)
+dif_exp_promoters <- promoters(txdb_genes[dif_exp_gene_entrez %in% txdb_genes$gene_id])
+dif_exp_prom = promoters(txdb_genes[txdb_genes$gene_id %in% dif_exp_gene_ids$entrezgene])
+```
+
+####Get the overlaping intervals between all genes/promoters and methylation marks
+```{r get the overlaping intervals between all genes/promoters and methylation marks}
+fetal_ov_promoters = subsetByOverlaps(fetal_met, dif_exp_promoters)
+adult_ov_promoters = subsetByOverlaps(adult_met, dif_exp_promoters)
+liver_ov_promoters = subsetByOverlaps(liver_met, dif_exp_promoters)
+
+```
+
+##Get the overlaping intervals between differentially expressed genes/promoters and methylation marks
+```{r get the overlaping intervals between differentially expressed genes/promoters and methylation marks}
+adult_ov_prom = subsetByOverlaps(adult_met, dif_exp_prom)
+fetal_ov_prom = subsetByOverlaps(fetal_met, dif_exp_prom)
+liver_ov_prom = subsetByOverlaps(liver_met, dif_exp_prom)
+```
+
+
+
+##Generate Venn Diagrams and hypergeometric test between the overlaping intervals
+```{r generate Venn Diagrams and hypergeometric test between the overlaping intervals}
+library(ChIPpeakAnno)
+met_overlaps = findOverlapsOfPeaks(fetal_met, adult_met, liver_met, connectedPeaks = "merge")
+peaks_prom_overlaps = findOverlapsOfPeaks(fetal_ov_prom, adult_ov_prom, liver_ov_prom, connectedPeaks = "merge")
+vennDiag_all_met <- makeVennDiagram(met_overlaps)
+HGtest <- makeVennDiagram(peaks_prom_overlaps, totalTest = 3500)
+HGtest$p.value
+HGtest$vennCounts
+```
+
+##Turn Venn counts into a matrix
+```{r turn Venn counts into a matrix}
+
+m = matrix(nrow=7, ncol=3)
+m[1,]=c(0, 0, 238)
+m[2,]=c(0, 442, 0)
+m[3,]=c(0, 718, 718)
+m[4,]=c(37, 0, 0)
+m[5,]=c(2, 0, 2)
+m[6,]=c(96, 96, 0)
+m[7,]=c(1619, 1619, 1619)
+```
+
+##Perform a Pearson's Chi-squared test
+```{r perform a Pearsons Chi-squared test}
+chisq.test(m, rescale.p = TRUE, simulate.p.value = TRUE)
+```
+
+```{r}
+sessionInfo()
+```
+
